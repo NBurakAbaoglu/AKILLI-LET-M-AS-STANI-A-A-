@@ -22,3 +22,43 @@ Sistem; sunucu yükünü optimize eden asenkron kuyruk yönetimi ve yüksek hata
 * **Kuyruk Yönetimi:** BullMQ
 * **Yapay Zeka:** Groq API, Llama-3.1 (LLM), HuggingFace (Text Classification)
 Not: Projenin çalışması için gerekli olan yapay zeka model dosyalarını indirip backend dizinindeki ai_model klasörünün içine atmanız gerekmektedir
+## ⚙️ Kurulum ve Çalıştırma (Installation)
+
+Projeyi bilgisayarınızda yerel olarak çalıştırmak için sisteminizde Node.js, Python (3.x), PostgreSQL ve Redis kurulu olmalıdır.
+
+### 1. Node.js Sunucusu ve Frontend
+Öncelikle ana uygulamanın bağımlılıklarını kurun:
+\`\`\`bash
+# Klasöre girin
+cd backend
+
+# Gerekli Node.js modüllerini kurun
+npm install
+
+# .env dosyanızı oluşturun ve gerekli API/Veritabanı şifrelerinizi girin
+# Sunucuyu başlatın
+node server.js
+\`\`\`
+
+### 2. Python Yapay Zeka Sunucusu (AI Microservice)
+Llama-3.1 ve Gemini modellerinin çalışması için Python sunucusunun da ayağa kaldırılması gerekmektedir:
+
+\`\`\`bash
+# Python klasörüne girin (Eğer ayrı bir klasördeyse)
+# cd ai_service 
+
+# Sanal ortam (Virtual Environment) oluşturun
+python -m venv .venv
+
+# Sanal ortamı aktifleştirin (Windows için)
+.venv\Scripts\activate
+# (Mac/Linux kullananlar için: source .venv/bin/activate)
+
+# Gerekli tüm Python kütüphanelerini kurun
+pip install -r requirements.txt
+
+# Yapay zeka sunucusunu başlatın
+python app.py
+\`\`\`
+
+> **Not:** AI sunucusunun çalışabilmesi için `.env` dosyasının içerisine geçerli `GROQ_API_KEY` ve `GEMINI_API_KEY` değerlerinin eklenmesi unutulmamalıdır.
