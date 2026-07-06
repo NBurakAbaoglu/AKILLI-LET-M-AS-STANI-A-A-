@@ -1,0 +1,723 @@
+/* --- Mail.css --- */
+
+:root {
+  --mail-bg-app: #f0f2f5;
+  --mail-bg-white: #ffffff;
+  --mail-bg-slate-50: #f8fafc;
+  --mail-bg-slate-100: #f1f5f9;
+  --mail-bg-slate-200: #e2e8f0;
+  --mail-text-slate-500: #64748b;
+  --mail-text-slate-800: #1e293b;
+  --mail-color-indigo-600: #4f46e5;
+  --mail-color-indigo-50: #eef2ff;
+}
+
+.dark {
+  --mail-bg-app: #0f172a;
+  --mail-bg-white: #1e293b;
+  --mail-bg-slate-50: #1e293b;
+  --mail-bg-slate-100: #334155;
+  --mail-bg-slate-200: #475569;
+  --mail-text-slate-500: #94a3b8;
+  --mail-text-slate-800: #f1f5f9;
+  --mail-color-indigo-600: #818cf8;
+  --mail-color-indigo-50: #312e81;
+}
+
+/* Temel Ayarlar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.dark * {
+  scrollbar-color: #475569 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 20px;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background-color: #475569;
+}
+
+/* Animasyonlar */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes slide-in-from-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-bottom-2 {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoom-in-95 {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+.slide-in-from-right {
+  animation-name: slide-in-from-right;
+}
+
+.slide-in-from-bottom-2 {
+  animation-name: slide-in-from-bottom-2;
+}
+
+.fade-in {
+  animation-name: fade-in;
+}
+
+.zoom-in-95 {
+  animation-name: zoom-in-95;
+}
+
+.duration-200 {
+  animation-duration: 0.2s;
+}
+
+.duration-300 {
+  animation-duration: 0.3s;
+}
+
+/* Glassmorphism */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-card {
+  background: rgba(30, 41, 59, 0.7);
+}
+
+/* Line Clamp */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom Scrollbar Area */
+.custom-scrollbar {
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+/* Prose Stilleri */
+.prose {
+  max-width: 65ch;
+  line-height: 1.6;
+}
+
+.prose p {
+  margin-bottom: 1em;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Dark Mode Transitions */
+.dark {
+  color-scheme: dark;
+}
+
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Hover Efektleri */
+.hover-scale-102:hover {
+  transform: scale(1.02);
+}
+
+/* Gradient Metin */
+.gradient-text {
+  background: linear-gradient(to right, #4f46e5, #7c3aed, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Özel Renk Sınıfları için Yardımcılar */
+.bg-rose-500 {
+  background-color: #f43f5e;
+}
+
+.bg-amber-500 {
+  background-color: #f59e0b;
+}
+
+.bg-emerald-500 {
+  background-color: #10b981;
+}
+
+.bg-cyan-500 {
+  background-color: #06b6d4;
+}
+
+.bg-blue-500 {
+  background-color: #3b82f6;
+}
+
+.bg-indigo-500 {
+  background-color: #6366f1;
+}
+
+.bg-violet-500 {
+  background-color: #8b5cf6;
+}
+
+.bg-purple-500 {
+  background-color: #a855f7;
+}
+
+.text-rose-500 {
+  color: #f43f5e;
+}
+
+.text-amber-500 {
+  color: #f59e0b;
+}
+
+.text-emerald-500 {
+  color: #10b981;
+}
+
+.text-cyan-500 {
+  color: #06b6d4;
+}
+
+.text-blue-500 {
+  color: #3b82f6;
+}
+
+.text-indigo-500 {
+  color: #6366f1;
+}
+
+.text-violet-500 {
+  color: #8b5cf6;
+}
+
+/* Ring Efektleri */
+.ring-indigo-500-20 {
+  --tw-ring-color: rgb(99 102 241 / 0.2);
+}
+
+.focus-ring-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Backdrop Blur */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Selection Color */
+::selection {
+  background-color: #818cf8;
+  color: white;
+}
+
+.dark ::selection {
+  background-color: #4f46e5;
+}
+
+/* Placeholder Stilleri */
+::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+/* Input Autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-text-fill-color: #1e293b;
+}
+
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #1e293b inset;
+  -webkit-text-fill-color: #f1f5f9;
+}
+
+/* Responsive Ayarlamalar */
+@media (max-width: 1024px) {
+  .mail-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 50;
+    transform: translateX(-100%);
+  }
+  
+  .mail-sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* Yazdırma Stilleri */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+  }
+}
+
+/* Yüksek Kontrast Modu */
+@media (prefers-contrast: high) {
+  .glass-card {
+    background: white;
+    border: 2px solid black;
+  }
+  
+  .dark .glass-card {
+    background: black;
+    border: 2px solid white;
+  }
+}
+
+/* Hareket Tercihi */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Yardımcı Sınıflar */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus Visible */
+:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* Disabled Stilleri */
+:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Drag ve Drop İmleçleri */
+[draggable="true"] {
+  cursor: grab;
+}
+
+[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+/* Yeni Eklenen Özellik Stilleri */
+.stat-card-gradient {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+}
+
+.dark .stat-card-gradient {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.1) 100%);
+}
+
+/* Chatbot Mesaj Baloncukları */
+.chat-message-user {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  border-radius: 1rem 1rem 0.25rem 1rem;
+}
+
+.chat-message-bot {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1e293b;
+  border-radius: 1rem 1rem 1rem 0.25rem;
+  border: 1px solid #e2e8f0;
+}
+
+.dark .chat-message-bot {
+  background: rgba(30, 41, 59, 0.9);
+  color: #f1f5f9;
+  border-color: #475569;
+}
+
+/* Takvim Gün Hücreleri */
+.calendar-day {
+  min-height: 100px;
+  transition: all 0.2s;
+}
+
+.calendar-day:hover {
+  background-color: rgba(99, 102, 241, 0.05);
+}
+
+.dark .calendar-day:hover {
+  background-color: rgba(99, 102, 241, 0.1);
+}
+
+/* Etiket Renkleri */
+.tag-important {
+  --tag-color: #f43f5e;
+}
+
+.tag-todo {
+  --tag-color: #f59e0b;
+}
+
+.tag-waiting {
+  --tag-color: #f97316;
+}
+
+.tag-idea {
+  --tag-color: #06b6d4;
+}
+
+.tag-contract {
+  --tag-color: #3b82f6;
+}
+
+.tag-invoice {
+  --tag-color: #10b981;
+}
+
+/* AI Yazma Animasyonu */
+.ai-typing::after {
+  content: '|';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Eklenti Kartları */
+.attachment-preview {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.attachment-preview:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Kısayol Tuşları */
+kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 0 #cbd5e1;
+}
+
+.dark kbd {
+  background: #334155;
+  border-color: #475569;
+  box-shadow: 0 1px 0 #475569;
+  color: #f1f5f9;
+}
+
+/* Boş Durum İllüstrasyonları */
+.empty-state-icon {
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+}
+
+.dark .empty-state-icon {
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* Parıltı Efekti */
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Son Dokunuşlar */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Mobil Optimizasyonları */
+@media (hover: none) {
+  .hover-scale-102:hover {
+    transform: none;
+  }
+  
+  .group:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Ek Yardımcı Sınıflar */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* Tailwind Benzeri Spacing */
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 0.75rem; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+
+.m-1 { margin: 0.25rem; }
+.m-2 { margin: 0.5rem; }
+.m-4 { margin: 1rem; }
+
+/* Flexbox Yardımcıları */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.flex-1 { flex: 1 1 0%; }
+.flex-wrap { flex-wrap: wrap; }
+
+/* Grid Yardımcıları */
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.grid-rows-5 { grid-template-rows: repeat(5, minmax(0, 1fr)); }
+
+/* Gap */
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+
+/* Width & Height */
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.h-screen { height: 100vh; }
+.min-h-screen { min-height: 100vh; }
+
+/* Position */
+.fixed { position: fixed; }
+.absolute { position: absolute; }
+.relative { position: relative; }
+.sticky { position: sticky; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+
+/* Z-Index */
+.z-10 { z-index: 10; }
+.z-20 { z-index: 20; }
+.z-30 { z-index: 30; }
+.z-40 { z-index: 40; }
+.z-50 { z-index: 50; }
+
+/* Opacity */
+.opacity-0 { opacity: 0; }
+.opacity-50 { opacity: 0.5; }
+.opacity-100 { opacity: 1; }
+
+/* Visibility */
+.invisible { visibility: hidden; }
+.visible { visibility: visible; }
+
+/* Pointer Events */
+.pointer-events-none { pointer-events: none; }
+.pointer-events-auto { pointer-events: auto; }
+
+/* Cursor */
+.cursor-pointer { cursor: pointer; }
+.cursor-grab { cursor: grab; }
+.cursor-grabbing { cursor: grabbing; }
+
+/* User Select */
+.select-none { user-select: none; }
+
+/* Transition */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Transform */
+.transform {
+  transform: translateX(var(--tw-translate-x, 0)) translateY(var(--tw-translate-y, 0)) rotate(var(--tw-rotate, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1));
+}
+
+/* Scale */
+.scale-95 { --tw-scale-x: 0.95; --tw-scale-y: 0.95; }
+.scale-100 { --tw-scale-x: 1; --tw-scale-y: 1; }
+.scale-105 { --tw-scale-x: 1.05; --tw-scale-y: 1.05; }
+.scale-110 { --tw-scale-x: 1.1; --tw-scale-y: 1.1; }
+
+/* Rotate */
+.rotate-45 { --tw-rotate: 45deg; }
+.rotate-90 { --tw-rotate: 90deg; }
+.rotate-180 { --tw-rotate: 180deg; }
+
+/* Translate */
+.-translate-x-1-2 { --tw-translate-x: -50%; }
+.-translate-y-1-2 { --tw-translate-y: -50%; }
+
+/* Appearance */
+.appearance-none {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Resize */
+.resize-none { resize: none; }
+
+/* List Style */
+.list-none { list-style-type: none; }
+
+/* Whitespace */
+.whitespace-nowrap { white-space: nowrap; }
+.whitespace-pre-wrap { white-space: pre-wrap; }
+
+/* Word Break */
+.break-words { overflow-wrap: break-word; }
+
+/* Fill ve Stroke */
+.fill-current { fill: currentColor; }
+.stroke-current { stroke: currentColor; }
+/* E-posta içeriğindeki (hem okuma hem yazma) listelerin görünmesini sağlar */
+.mail-html-content ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.mail-html-content ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.mail-html-content li {
+  margin-bottom: 0.25rem !important;
+}
+
+/* Alıntı (Quote) tasarımı */
+.mail-html-content blockquote {
+  border-left: 4px solid #94a3b8;
+  padding-left: 1rem;
+  color: #64748b;
+  font-style: italic;
+  margin: 1rem 0;
+  background-color: rgba(241, 245, 249, 0.5);
+}
+
+.dark .mail-html-content blockquote {
+  border-left-color: #475569;
+  color: #94a3b8;
+  background-color: rgba(30, 41, 59, 0.5);
+}
