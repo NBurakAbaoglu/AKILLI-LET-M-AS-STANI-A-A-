@@ -21,3 +21,4 @@ Sistem; sunucu yükünü optimize eden asenkron kuyruk yönetimi ve yüksek hata
 * **Veritabanı & Önbellek:** PostgreSQL, Redis
 * **Kuyruk Yönetimi:** BullMQ
 * **Yapay Zeka:** Groq API, Llama-3.1 (LLM), HuggingFace (Text Classification)
+Not: Projenin çalışması için gerekli olan yapay zeka model dosyalarını indirip backend dizinindeki ai_model klasörünün içine atmanız gerekmektedir
