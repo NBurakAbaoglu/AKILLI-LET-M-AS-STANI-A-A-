@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bullmq": "^5.71.0",
+    "chart.js": "^4.5.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "googleapis": "^171.4.0",
+    "imapflow": "^1.2.11",
+    "ioredis": "^5.10.0",
+    "jsonwebtoken": "^9.0.3",
+    "mailparser": "^3.9.3",
+    "nodemailer": "^8.0.1",
+    "pg": "^8.19.0",
+    "react-chartjs-2": "^5.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
